@@ -28,7 +28,7 @@ public class EmptyString
 	{
 		int i=0;
 	List<String>strings=Arrays.asList("abc","","bc","efg","abcd","","jkl");
-	 Iterator it=strings.iterator();		/*.....List interface and array class is used to get values...iterator method is  							used and empty method is used to check null values...."*/
+	 Iterator it=strings.iterator();		/*.....List interface and array class is used to get values...iterator method is used and empty method is 									used to check null values...."*/							
 	 try {
 		 while(it.hasNext())
 		 {
@@ -51,8 +51,7 @@ public class EmptyString
 	 }
 	}
 }
--------------------------------------------------------------------------------------------------------------------------------------------
-3rd program:
+-------------------------------------------------------------------------------------------------------------------------------------------3rd program:
 package guvitask5;
 								/*.....stream Api and filter method is used..with forEach*..../
 import java.util.Arrays;
