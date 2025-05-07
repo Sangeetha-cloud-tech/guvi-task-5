@@ -1,0 +1,103 @@
+1st program:
+package guvitask5;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Map
+{
+	public static void main(String args[])
+	{
+	
+ Stream<String> names=Stream.of("aBc","d","ef1");
+ System.out.println("The modified data:");			/*.....stream Api and map method is used..with forEach*..../
+ names.map(e->e.toUpperCase()).forEach(e->System.out.println(e));
+ 
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------------------2nd program:
+package guvitask5;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class EmptyString
+{
+	public static void main(String args[])
+	{
+		int i=0;
+	List<String>strings=Arrays.asList("abc","","bc","efg","abcd","","jkl");
+	 Iterator it=strings.iterator();		/*.....List interface and array class is used to get values...iterator method is  							used and empty method is used to check null values...."*/
+	 try {
+		 while(it.hasNext())
+		 {
+			 String a=strings.get(i);
+			 
+			 if(!a.isEmpty())
+			 {
+				 System.out.println("The string is not empty...and the String is "+strings.get(i));
+			 }
+			 else
+			 {
+				 System.out.println("The string is empty");
+			 }
+			 i++;
+		 }
+	 }
+	 catch(Exception e)
+	 {
+		 System.out.println("....process finished....");
+	 }
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+3rd program:
+package guvitask5;
+								/*.....stream Api and filter method is used..with forEach*..../
+import java.util.Arrays;
+import java.util.List;
+
+public class Filter
+{
+	public static void main(String args[])
+	{
+	List<String> students=Arrays.asList("Anitha","Banu","har","Arjun","kamalesh","Chiranjeevi","Geetha","Arun","Aparna","Athmika");
+	System.out.println("The students are...");
+	students.stream().filter(e->e.startsWith("A")).forEach(e->System.out.println(e));
+	}
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------------4th program:
+package guvitask5;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+				/*....Localdate class is used and current date is obtaied using now() method form Localdate class...*/
+				/*...Period class is used to calculate the age between current date and birthdate....*/
+				/*...getYears(),getMonths(),getDays() methods are used to get the specifieed values...*/
+public class Birthday
+{
+	public static void main(String args[])
+	{
+		try {
+		int years,months,days;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your birthdate (yyyy-mm-dd):");
+		String birthdate=sc.nextLine();
+		LocalDate birthdate1=LocalDate.parse(birthdate,DateTimeFormatter.ISO_DATE);
+		LocalDate currentdate=LocalDate.now();
+		Period p=Period.between(birthdate1, currentdate);
+		years=p.getYears();
+		months=p.getMonths();
+		days=p.getDays();
+		System.out.println("Your age is: "+years+"years,"+months+"months, and "+days+"days.");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Please check whether the entered date is in the specified format");
+		}
+	}
+
+}
